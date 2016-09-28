@@ -1,0 +1,526 @@
+@charset "utf-8";
+/* CSS Document */
+*{
+	margin: 0;
+	padding: 0;
+}
+a{
+	text-decoration:none;
+	color:#999;
+}
+/*显示红色背景*/
+.coRed{
+	color:#FFFFFF;
+	padding:2px 5px;
+	background: red;
+	border-radius: 5px;
+}
+/*每个列表行间距离设置为10px的*/
+li{
+	line-height: 22px;
+}
+/*每个label之间的间距*/
+input,
+label{
+	padding: 0 5px;
+}
+
+
+/*清除浮动*/
+.clearfix::before,
+.clearfix::after{
+	content: "";
+	height: 0;
+	line-height: 0;
+	display: block;
+	visibility: hidden;
+	clear: both;
+}
+
+.clearfix:after{clear:both;} 
+.clearfix{ 
+    *zoom:1;/*IE/7/6*/
+}
+
+/*清除表单样式*/
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,form,fieldset,input,button,textarea,p,th,td{
+	padding:0;margin:0;
+}
+table{
+	border-collapse:collapse;border-spacing:0;
+}
+fieldset,img{
+	border:0;
+}
+a{
+	text-decoration:none;color:#000;outline:none;
+}
+li{
+	list-style:none;
+}
+caption,th{
+	text-align:left;
+}
+input,button,textarea,select,optgroup,option{
+	font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;
+}
+
+input,button,textarea,select{
+	*font-size:100%;
+}
+a{
+	-webkit-transition:all 0.5s linear;-moz-transition:all 0.5s linear;-ms-transition:all 0.5s linear;-o-transition:all 0.5s linear;
+}
+
+/*input输入框、select下拉框变成下划线  */
+input,select{
+	color: #999;
+	border-color: #a0a0a0; 
+    border-style: solid; 
+    border-top-width: 0px;
+    border-right-width: 0px; 
+    border-bottom-width: 1px;
+    border-left-width: 0px;
+}
+/*button的样式设置*/
+button{
+	padding: 3px 10px;
+	margin-left: 10px;
+	background: #a0a0a0;
+	border-radius: 10px;
+	border: #a0a0a0;
+	color:#FFFFFF;
+}
+/*下拉框样式*/
+.dropdown {
+	display:inline-block;
+	width:120px;
+	height:20px;
+	border:1px solid #a0a0a0;
+	position:relative; 
+	border-top-width: 0px;
+    border-right-width: 0px; 
+    border-bottom-width: 1px;
+    border-left-width: 0px;
+    z-index: 9999;
+}
+.dropdown .editor {
+	display:block;
+	border:0;
+	padding:0;
+	width:100%;
+	/*box-shadow: inset 1px 2px 3px #ddd;*/
+	height:inherit;
+}
+.dropdown .trigger {
+	position:absolute;
+	top:0;
+	right:0;
+	background:url(../img/downSelect.png) no-repeat center center; 
+	border-top-width: 0px;
+    border-right-width: 0px; 
+    border-bottom-width: 0px;
+    border-left-width: 0px;
+    padding:1px 8px;
+}
+.dropdown ul {
+	display:none;
+	width:100%;
+	height:140px;
+	/*padding:2px;*/
+	position:absolute;
+	top:100%;
+	background-color:#FFF;
+	border:1px solid #DDD;
+	border-radius: 0 0 5px 5px;
+	overflow-y:auto;
+	overflow-x:hidden;
+}
+.dropdown ul li {
+	height:20px;
+	display:block;
+	font-size:12px;
+	overflow:hidden;
+	cursor:pointer;
+}
+.dropdown ul li .hot {
+	color: red;
+}
+.dropdown ul li:hover {
+	background-color: #EEE;
+}
+.dropdown ul .search {
+	display:block;
+	border: 1px solid #EEEEEE;
+	border-bottom: 1px solid #808080;
+}
+.dropdown ul .search:hover{
+	background-color:#FFF;
+}
+.dropdown ul .search input {
+	padding:2px;
+	width:100%;
+	border:0;
+	font-size:14px;
+	background:none;
+}
+/*图片按钮去掉下划线*/
+input[type="image"]{
+	border-bottom-width:0px;
+}
+
+/*”限字“样式*/
+.cSpan{
+	padding: 2px 5px;
+	background: #009843;
+	border-radius: 5px;
+	color: #FFFFFF;
+}
+/*右边25px内边距*/
+.cright{
+	padding-right: 25px;
+}
+/*字体变蓝色*/
+.letterBlue{
+	color: #66b0fe;
+}
+.letterRed{
+	color: red;
+}
+/*给字体一个左边距16px对齐*/
+.letterSpace{
+	padding-left: 16px;
+}
+/*日期输入框的长度*/
+.numberWidth{
+	width: 40px;
+}
+body{
+	margin: 0 auto;
+	font-family:"microsoft yahei" ,sans-serif;
+	font-size: 16px;
+}
+/*.con2,
+.con3,
+.con4,
+.con5,
+.con6,
+.con7,
+.con8,
+.con9{
+   padding: 5px 0;
+   border-bottom: 1px solid #009843;
+}
+.con2 fieldset,
+.con3 fieldset,
+.con4 fieldset,
+.con5 fieldset,
+.con6 fieldset,
+.con7 fieldset,
+.con8 fieldset,
+.con9 fieldset{
+	margin-left: 11px;
+	padding-left: 25px;
+}*/
+/*header开始*/
+#libg {
+	background-color:#FFF;
+	border-bottom-width:0px;
+}
+.table{
+	font-size:12px; width:125px; text-align:left;
+}
+.bj1{
+	height: 30px;
+	margin: 0 auto;
+	background-color: #eeeeee;
+}
+
+.bj1box{
+	width: 1080px;
+	margin: 0 auto;
+}
+.bj1 ul {
+	width: 660px;
+	float: right;
+	height: 30px;
+}
+.bj1nav li {
+	float: right;
+	list-style-type: none;
+	line-height: 30px;
+	width: 80px;
+	padding-right: 25px;
+	position: relative;
+}
+
+.bj1nav li ul{
+	display: none;
+	position: absolute;
+	width: 105px;
+	left: 0;
+}
+.bj1nav li:hover ul{
+	display:block;
+	z-index: 1000;
+}
+.bj1nav li a {
+	display: block;
+}
+.bj1navli a{
+	padding-right: 0;
+}
+.bj1 a:hover{
+	color: #FFFFFF;
+}
+.bj1 p {
+	width: 250px;
+	line-height: 30px;
+	float: left;
+	color: #999;
+	height: 30px;
+}
+.bj2{
+	height: 30px;
+	margin: 0 auto;
+	background-color: #fff79a;
+	color: #999;
+}
+.bj2 p {
+	width: 1050px;
+	margin: 0 auto;
+	line-height: 30px;
+	padding-left: 30px;
+	background: url(../img/99.png) no-repeat center left;
+}
+.bj2 p span{
+	padding: 0 25px;
+}
+
+.bj3{
+	width: 1082px;
+	height: 50px;
+	margin: 0 auto;
+	background-color: #ff6600;
+}
+.bj3 ul {
+}
+.bj3 ul li {
+	float: left;
+	list-style-type: none;
+	line-height: 50px;
+	height: 50px;
+	width: 96px;
+	text-align: center;
+}
+.bj3 ul li a {
+	color: #FFF;
+	font-size: 22px;
+	text-decoration: none;
+	display: block;
+}
+.bj3 ul li a:hover {
+	background-image: url(../img/100.png);
+	background-repeat: no-repeat;
+}
+.bj3 ul li:first-child a{
+	background-image: url(../img/100.png);
+	background-repeat: no-repeat;
+}
+/*footer部分*/
+.bj4{
+	height: 30px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #eeeeee;
+}
+.bj4 p {
+	width: 1080px; 
+	margin: 0 auto;
+	line-height:30px;
+}
+.bj4 p span {
+	float: right;
+}
+/*正文开始*/
+.content {
+	width: 1080px;
+	border: 1px solid #a0a0a0;
+	border-top: none;
+	margin: 0 auto;
+	color:#A0A0A0;
+}
+
+/*con1开始*/
+
+.con1_nav{
+	height: 55px;
+	line-height: 55px;
+	padding-left: 18px;
+}
+.con1_nav p{
+	padding-left: 30px;
+	background:url(../img/open.png) no-repeat left center;
+}
+.con1_nav p span{
+	margin-left: 160px;
+	color: #999;
+	font-size: 20px;
+	font-weight: bold;
+}
+.con1_msg{
+	height: 30px;
+	line-height: 30px;
+	padding-left:18px;
+	background: #EEEEEE;
+	
+}
+.con1_msg p{
+	padding-left: 60px;
+	background: url(../img/horn.png) no-repeat left center ;
+}
+/*下拉菜单栏*/  
+.Smenubar{
+	border-top: 1px solid #7d7d7d;
+	border-bottom: 1px solid #7d7d7d;
+	width:1080px;
+	margin:10px 0;
+}                           
+.Smenubar ul li{
+	display: inline-block;
+	color: #7d7d7d;
+	text-align: center;
+	width:16.2%;
+	border-right: 1px solid #7d7d7d;
+	background: #EEEEEE;
+}
+/*实体店铺*/
+.box{
+	margin: 10px 0;
+}
+.data{
+	 padding: 10px 25px;
+}
+.datatable{
+	width: 1030px;
+	background: #EEEEEE;
+	border-radius: 10px;
+	margin: 10px 0;
+	text-align: center;
+}
+
+.datatable tr td
+.detailtable tr td{
+    padding: 5px 0;
+}
+/*店铺明细*/
+.detail{
+	padding: 10px 25px;
+}
+.detail img{
+	float: right;
+}
+.detailtable{
+	width: 1030px;
+	border-radius: 10px;
+	margin: 10px 0;
+	text-align: center;
+}
+.detailtable tr{
+	border: 1px solid #7D7D7D;
+}
+.detailtable tr td img{
+	padding: 0 5px;
+}
+.dettdimg{
+	margin-right: 36px;
+}
+.detailtable tr:first-child{
+	background: #EEEEEE;
+}
+/*新增实体店铺*/
+.newlyShop{
+	background: #EEEEEE;
+	margin: 10px;
+	padding: 10px 0;
+	border-radius: 10px;
+}
+/*nShop1*/
+.newlyShop p,
+.nShop1,
+.nShop2,
+.nShop3,
+.nShop4{
+	margin:5px 15px 15px 15px;
+}
+.nShop1 fieldset,
+.nShop2 fieldset,
+.nShop3 fieldset,
+.nShop4 fieldset{
+	margin: 10px 0;
+}
+.nShop1,
+.nShop2,
+.nShop3,
+.nShop4{
+	background: #FFFFFF;
+	padding:5px;
+}
+.nShop1one button,
+.nShop2one button,
+.nShop4one button{
+	float: right;
+}
+.nS1onespan{
+	padding-left: 205px;
+}
+/*nShop2*/
+.nShop2two textarea{
+	margin: 0 15px 0 32px;
+	width: 970px;
+	padding: 5px;
+	height: 100px;
+	margin-left: 32px;
+}
+/*nShop3*/
+.nShop3one tr td{
+	padding:5px 10px;
+}
+.nShop3one tr td input[type="text"]{
+	width: 114px;
+}
+.nShop3oneBtn{
+	text-align: right;
+}
+.nShop3one tr td:last-child{
+	padding: 0 !important;
+	width: 94px;
+}
+/*nShop4*/
+.nShop4twoSpan{
+	background: #EEEEEE;
+	padding: 5px;
+	margin-right: 20px;
+	border-radius: 5px;
+}
+.nS4threeTable {
+	width: 1010px;
+	text-align: center;
+	margin: 10px auto;
+}
+.nS4threeTable tr td{
+	border: 1px solid #7D7D7D;
+	padding: 5px 0;
+}
+.nS4threeTable tr:hover,
+.nS4threeTable tr:visited{
+    background: #EEEEEE;
+}
+.shopSubmit{
+	padding:5px;
+}
+.blueBtn{
+	background: #009843;
+	color: #FFF;
+	float: right;
+}
