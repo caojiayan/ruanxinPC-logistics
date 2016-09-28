@@ -517,10 +517,65 @@ body{
     background: #EEEEEE;
 }
 .shopSubmit{
+	height: 30px;
 	padding:5px;
 }
 .blueBtn{
 	background: #009843;
 	color: #FFF;
 	float: right;
+}
+/*纸箱部分*/
+.cartontable{
+	width: 1030px;
+	border-radius: 10px;
+	margin: 10px 0;
+	text-align: center;
+}
+.cartontable tr td{
+	border: 1px solid #7D7D7D;
+}
+.cartontable tr td img{
+	padding: 0 5px;
+}
+.cartontable tr:first-child{
+	background: #EEEEEE;
+}
+.cartonOperate{
+	padding: 0 25px;
+}
+.CartonblueBtn{
+	background: #009843;
+	color: #FFF;
+}
+.templet1{
+	padding: 10px 25px;
+}
+.templet1two{
+	width: 750px;
+	background: #EEEEEE;
+	margin:10px 0 10px 36px ;
+	padding: 10px;
+	border-radius: 10px;
+}
+.templet1two p{
+	padding:5px 0 5px 36px;
+}
+.templet1two p:first-child{
+	padding-left:0;
+}
+.templet3 p{
+	padding-left: 25px;
+}
+.templet3Box{
+	background: #EEEEEE;
+	margin:10px;
+	border-radius: 10px;
+}
+.tem3oneTable{
+	width: 1030px;
+	margin: 10px auto;
+}
+.tem3oneTable tr td{
+	padding: 5px 0;
 }
