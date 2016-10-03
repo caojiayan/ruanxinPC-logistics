@@ -5,9 +5,25 @@
 		<title>物流配送管理-实体店铺</title>
 		<script type="text/javascript" src="js/jquery-1.7.2.min.js" ></script>
 		<script type="text/javascript" src="js/logisticsIndex.js" ></script>
+		<script type="text/javascript" src="city/drag.js" ></script>
+		<script type="text/javascript" src="city/city_arr.js" ></script>
 		<link rel="stylesheet" href="css/logisticsIndex.css" />
+		<link rel="stylesheet" href="city/alpha.css" />
 	</head>
 	<body>
+		<script type="text/javascript">
+        // 是否在数组内
+        function in_array(needle, haystack) {
+	        if(typeof needle == 'string' || typeof needle == 'number') {
+		        for(var i in haystack) {
+			        if(haystack[i] == needle) {
+					    return true;
+			        }
+		        }
+	        }
+	        return false;
+        }
+        </script>
 		<!--header开始-->
 		<div class="bj1">
 	        <div class="bj1box">
@@ -82,19 +98,22 @@
 		    </div>
 		    <!--下拉菜单栏-->
 		    <div class="Smenubar">
-		    	<ul>
-		    		<li>实体店铺</li>
-		    		<li>实体仓库</li>
-		    		<li>实体工厂</li>
-		    		<li>工作人员</li>
-		    		<li>纸箱</li>
-		    		<li>物流配送模板 </li>
-		    	</ul>
+		    	<table class="clearfix list">
+		    		<tbody></tbody>
+		    		<tr class="listtr">
+		    			<td class="active"><a href="#">实体店铺</a></td>
+		    			<td><a href="#">实体仓库</a></td>
+		    			<td><a href="#">实体工厂 </a></td>
+		    			<td><a href="#">工作人员 </a></td>
+		    			<td class="list1"><a href="#">纸箱  </a></td>
+		    			<td class="list2"><a href="#">物流配送模板</a></td>
+		    		</tr>
+		    	</table>
 		    </div>
 		    <!--物流配送大盒子开始-->
 		    <div class="logisticsBox">
 		    	<!--实体店铺开始-->
-		    	<div class="box">
+		    	<div class="logbox active">
 		    		<!--数据概括开始-->
 		    		<div class="data">
 		    			<p class="cright">
@@ -139,7 +158,7 @@
 		    					<td>漏发数</td>
 		    					<td>退货订单</td>
 		    					<td>
-		    						<img class="dettdimg" src="img/blockS.png" align="center">
+		    						<img src="img/1122.png" align="center">
 		    					</td>
 		    				</tr>
 		    				<tr>
@@ -289,16 +308,33 @@
 		    				<form>
 		    					<fieldset class="nShop2one">
 		    						<span class="cright">提供发票</span>
-		    						<input type="checkbox" >是
+		    						<input type="checkbox">是
+		    						<!--发货范围（城市地区选择）开始-->
 		    						<span class="cright">发货范围</span>
-		    						<img src="img/addGreen.png" align="center">
+		    						<script type="text/javascript" src="city/city_func.js"></script>
+	                                <input id="btn_jobArea" type="button" value="" onclick="jobAreaSelect()" style="border-radius: 5px;width:30px;height:25px;margin: 0 auto; background: url(img/addGreen.png) no-repeat center bottom;"/> 
+	                                <input id="jobAreaID" type="hidden" name="jobAreaID" value="" />	
 		    						<button type='submit'>保存</button>
 		    					</fieldset>
 		    					<fieldset class="nShop2two">
-		    						<textarea>
+		    						<textarea class="jobAreaText" >
 上海，北京，天津，山西，山东，河北，湖南，湖北，河南，广东，广西
 		    						</textarea>
+		    						<script type="text/javascript" src="city/certificate_arr.js"></script>
+	                                <script type="text/javascript" src="city/certificate_func.js"></script>
+	                                <!--弹出窗部分 alpha div -->
+                                    <div id="maskLayer" style="display:none">
+                                        <iframe id="maskLayer_iframe" frameBorder=0 scrolling=no style="filter:alpha(opacity=50)"></iframe>
+                                        <div id="alphadiv" style="filter:alpha(opacity=50);-moz-opacity:0.5;opacity:0.5"></div>
+	                                    <div id="drag">
+		                                    <h3 id="drag_h"></h3>
+		                                    <div id="drag_con"></div>
+	                                    </div>
+                                    </div><!-- maskLayer end -->
+                                    <!-- alpha div end -->
+                                    <div id="sublist" style="display:none"></div>
 		    					</fieldset>
+		    					<!--发货范围（城市地区选择）开始-->
 		    					<fieldset class="nShop2three">
 		    						<span class="cright">周边可见</span>
 		    						<input type="checkbox" >是
@@ -444,7 +480,7 @@
 		    								</td>
 		    								<td>36</td>
 		    								<td>
-		    									<span class="dropdown">  <!-- 模拟 select 的标记， -->
+		    									<span class="dropdown" style="z-index:110;">  <!-- 模拟 select 的标记， -->
 			                                        <input class="editor" type="text" value="箱" onfocus="javascript:if(this.value=='箱')this.value='';"/> <!-- 显示当前值的输入框 -->
 			                                        <input class="trigger" style="padding:1px 8px;" type="button"/> <!-- 用于显示下拉列表的按钮 -->
 			                                        <ul>   <!-- 列表菜单 -->
@@ -477,7 +513,7 @@
 		    								</td>
 		    								<td>36</td>
 		    								<td>
-		    									<span class="dropdown">  <!-- 模拟 select 的标记， -->
+		    									<span class="dropdown" style="z-index:109;">  <!-- 模拟 select 的标记， -->
 			                                        <input class="editor" type="text" value="箱" onfocus="javascript:if(this.value=='箱')this.value='';"/> <!-- 显示当前值的输入框 -->
 			                                        <input class="trigger" style="padding:1px 8px;" type="button"/> <!-- 用于显示下拉列表的按钮 -->
 			                                        <ul>   <!-- 列表菜单 -->
@@ -510,7 +546,7 @@
 		    								</td>
 		    								<td>36</td>
 		    								<td>
-		    									<span class="dropdown">  <!-- 模拟 select 的标记， -->
+		    									<span class="dropdown" style="z-index:108;">  <!-- 模拟 select 的标记， -->
 			                                        <input class="editor" type="text" value="箱" onfocus="javascript:if(this.value=='箱')this.value='';"/> <!-- 显示当前值的输入框 -->
 			                                        <input class="trigger" style="padding:1px 8px;" type="button"/> <!-- 用于显示下拉列表的按钮 -->
 			                                        <ul>   <!-- 列表菜单 -->
@@ -543,7 +579,7 @@
 		    								</td>
 		    								<td>36</td>
 		    								<td>
-		    									<span class="dropdown">  <!-- 模拟 select 的标记， -->
+		    									<span class="dropdown" style="z-index:107;">  <!-- 模拟 select 的标记， -->
 			                                        <input class="editor" type="text" value="箱" onfocus="javascript:if(this.value=='箱')this.value='';"/> <!-- 显示当前值的输入框 -->
 			                                        <input class="trigger" style="padding:1px 8px;" type="button"/> <!-- 用于显示下拉列表的按钮 -->
 			                                        <ul>   <!-- 列表菜单 -->
@@ -576,7 +612,7 @@
 		    								</td>
 		    								<td>36</td>
 		    								<td>
-		    									<span class="dropdown">  <!-- 模拟 select 的标记， -->
+		    									<span class="dropdown" style="z-index:106;">  <!-- 模拟 select 的标记， -->
 			                                        <input class="editor" type="text" value="箱" onfocus="javascript:if(this.value=='箱')this.value='';"/> <!-- 显示当前值的输入框 -->
 			                                        <input class="trigger" style="padding:1px 8px;" type="button"/> <!-- 用于显示下拉列表的按钮 -->
 			                                        <ul>   <!-- 列表菜单 -->
@@ -609,7 +645,7 @@
 		    								</td>
 		    								<td>36</td>
 		    								<td>
-		    									<span class="dropdown">  <!-- 模拟 select 的标记， -->
+		    									<span class="dropdown" style="z-index:105;">  <!-- 模拟 select 的标记， -->
 			                                        <input class="editor" type="text" value="箱" onfocus="javascript:if(this.value=='箱')this.value='';"/> <!-- 显示当前值的输入框 -->
 			                                        <input class="trigger" style="padding:1px 8px;" type="button"/> <!-- 用于显示下拉列表的按钮 -->
 			                                        <ul>   <!-- 列表菜单 -->
@@ -642,7 +678,7 @@
 		    								</td>
 		    								<td>36</td>
 		    								<td>
-		    									<span class="dropdown">  <!-- 模拟 select 的标记， -->
+		    									<span class="dropdown" style="z-index:104;">  <!-- 模拟 select 的标记， -->
 			                                        <input class="editor" type="text" value="箱" onfocus="javascript:if(this.value=='箱')this.value='';"/> <!-- 显示当前值的输入框 -->
 			                                        <input class="trigger" style="padding:1px 8px;" type="button"/> <!-- 用于显示下拉列表的按钮 -->
 			                                        <ul>   <!-- 列表菜单 -->
@@ -682,7 +718,7 @@
 		    	</div>
 		    	<!--实体店铺结束-->
 		    	<!--实体仓库开始-->
-		    	<div class="warehouse">
+		    	<div class="logbox">
 		    		<!--数据概括开始-->
 		    		<div class="data">
 		    			<p class="cright">
@@ -727,7 +763,7 @@
 		    					<td>漏发数</td>
 		    					<td>退货订单</td>
 		    					<td>
-		    						<img class="dettdimg" src="img/blockS.png" align="center">
+		    						<img src="img/1122.png" align="center">
 		    					</td>
 		    				</tr>
 		    				<tr>
@@ -878,14 +914,32 @@
 		    					<fieldset class="nShop2one">
 		    						<span class="cright">提供发票</span>
 		    						<input type="checkbox" >是
+		    						<!--发货范围（城市地区选择）开始-->
 		    						<span class="cright">发货范围</span>
-		    						<img src="img/addGreen.png" align="center">
+		    						<script type="text/javascript" src="city/city_func.js"></script>
+	                                <input id="btn_jobArea" type="button" value="" onclick="jobAreaSelect()" style="border-radius: 5px;width:30px;height:25px;margin: 0 auto; background: url(img/addGreen.png) no-repeat center bottom;"/> 
+	                                <input id="jobAreaID" type="hidden" name="jobAreaID" value="" />	
 		    						<button type='submit'>保存</button>
 		    					</fieldset>
 		    					<fieldset class="nShop2two">
-		    						<textarea>
+		    						<textarea class="jobAreaText" >
 上海，北京，天津，山西，山东，河北，湖南，湖北，河南，广东，广西
 		    						</textarea>
+		    						<script type="text/javascript" src="city/certificate_arr.js"></script>
+	                                <script type="text/javascript" src="city/certificate_func.js"></script>
+	                                <!--弹出窗部分 alpha div -->
+                                    <div id="maskLayer" style="display:none">
+                                        <iframe id="maskLayer_iframe" frameBorder=0 scrolling=no style="filter:alpha(opacity=50)"></iframe>
+                                        <div id="alphadiv" style="filter:alpha(opacity=50);-moz-opacity:0.5;opacity:0.5"></div>
+	                                    <div id="drag">
+		                                    <h3 id="drag_h"></h3>
+		                                    <div id="drag_con"></div>
+	                                    </div>
+                                    </div><!-- maskLayer end -->
+                                    <!-- alpha div end -->
+                                    <div id="sublist" style="display:none"></div>
+		    					</fieldset>
+		    					<!--发货范围（城市地区选择）开始-->
 		    					</fieldset>
 		    					<fieldset class="nShop2three">
 		    						<span class="cright">周边可见</span>
@@ -1032,7 +1086,7 @@
 		    								</td>
 		    								<td>36</td>
 		    								<td>
-		    									<span class="dropdown">  <!-- 模拟 select 的标记， -->
+		    									<span class="dropdown" style="z-index:110;">  <!-- 模拟 select 的标记， -->
 			                                        <input class="editor" type="text" value="箱" onfocus="javascript:if(this.value=='箱')this.value='';"/> <!-- 显示当前值的输入框 -->
 			                                        <input class="trigger" style="padding:1px 8px;" type="button"/> <!-- 用于显示下拉列表的按钮 -->
 			                                        <ul>   <!-- 列表菜单 -->
@@ -1065,7 +1119,7 @@
 		    								</td>
 		    								<td>36</td>
 		    								<td>
-		    									<span class="dropdown">  <!-- 模拟 select 的标记， -->
+		    									<span class="dropdown" style="z-index:109;">  <!-- 模拟 select 的标记， -->
 			                                        <input class="editor" type="text" value="箱" onfocus="javascript:if(this.value=='箱')this.value='';"/> <!-- 显示当前值的输入框 -->
 			                                        <input class="trigger" style="padding:1px 8px;" type="button"/> <!-- 用于显示下拉列表的按钮 -->
 			                                        <ul>   <!-- 列表菜单 -->
@@ -1098,7 +1152,7 @@
 		    								</td>
 		    								<td>36</td>
 		    								<td>
-		    									<span class="dropdown">  <!-- 模拟 select 的标记， -->
+		    									<span class="dropdown" style="z-index:108;">  <!-- 模拟 select 的标记， -->
 			                                        <input class="editor" type="text" value="箱" onfocus="javascript:if(this.value=='箱')this.value='';"/> <!-- 显示当前值的输入框 -->
 			                                        <input class="trigger" style="padding:1px 8px;" type="button"/> <!-- 用于显示下拉列表的按钮 -->
 			                                        <ul>   <!-- 列表菜单 -->
@@ -1131,7 +1185,7 @@
 		    								</td>
 		    								<td>36</td>
 		    								<td>
-		    									<span class="dropdown">  <!-- 模拟 select 的标记， -->
+		    									<span class="dropdown" style="z-index:107;">  <!-- 模拟 select 的标记， -->
 			                                        <input class="editor" type="text" value="箱" onfocus="javascript:if(this.value=='箱')this.value='';"/> <!-- 显示当前值的输入框 -->
 			                                        <input class="trigger" style="padding:1px 8px;" type="button"/> <!-- 用于显示下拉列表的按钮 -->
 			                                        <ul>   <!-- 列表菜单 -->
@@ -1164,7 +1218,7 @@
 		    								</td>
 		    								<td>36</td>
 		    								<td>
-		    									<span class="dropdown">  <!-- 模拟 select 的标记， -->
+		    									<span class="dropdown" style="z-index:106;">  <!-- 模拟 select 的标记， -->
 			                                        <input class="editor" type="text" value="箱" onfocus="javascript:if(this.value=='箱')this.value='';"/> <!-- 显示当前值的输入框 -->
 			                                        <input class="trigger" style="padding:1px 8px;" type="button"/> <!-- 用于显示下拉列表的按钮 -->
 			                                        <ul>   <!-- 列表菜单 -->
@@ -1197,7 +1251,7 @@
 		    								</td>
 		    								<td>36</td>
 		    								<td>
-		    									<span class="dropdown">  <!-- 模拟 select 的标记， -->
+		    									<span class="dropdown" style="z-index:105;">  <!-- 模拟 select 的标记， -->
 			                                        <input class="editor" type="text" value="箱" onfocus="javascript:if(this.value=='箱')this.value='';"/> <!-- 显示当前值的输入框 -->
 			                                        <input class="trigger" style="padding:1px 8px;" type="button"/> <!-- 用于显示下拉列表的按钮 -->
 			                                        <ul>   <!-- 列表菜单 -->
@@ -1230,7 +1284,7 @@
 		    								</td>
 		    								<td>36</td>
 		    								<td>
-		    									<span class="dropdown">  <!-- 模拟 select 的标记， -->
+		    									<span class="dropdown" style="z-index:104;">  <!-- 模拟 select 的标记， -->
 			                                        <input class="editor" type="text" value="箱" onfocus="javascript:if(this.value=='箱')this.value='';"/> <!-- 显示当前值的输入框 -->
 			                                        <input class="trigger" style="padding:1px 8px;" type="button"/> <!-- 用于显示下拉列表的按钮 -->
 			                                        <ul>   <!-- 列表菜单 -->
@@ -1270,7 +1324,7 @@
 		    	</div>
 		    	<!--实体仓库结束-->
 		    	<!--实体工厂开始-->
-		    	<div class="warehouse">
+		    	<div class="logbox">
 		    		<!--数据概括开始-->
 		    		<div class="data">
 		    			<p class="cright">
@@ -1315,7 +1369,7 @@
 		    					<td>漏发数</td>
 		    					<td>退货订单</td>
 		    					<td>
-		    						<img class="dettdimg" src="img/blockS.png" align="center">
+		    						<img src="img/1122.png" align="center">
 		    					</td>
 		    				</tr>
 		    				<tr>
@@ -1620,7 +1674,7 @@
 		    								</td>
 		    								<td>36</td>
 		    								<td>
-		    									<span class="dropdown">  <!-- 模拟 select 的标记， -->
+		    									<span class="dropdown" style="z-index:110;">  <!-- 模拟 select 的标记， -->
 			                                        <input class="editor" type="text" value="箱" onfocus="javascript:if(this.value=='箱')this.value='';"/> <!-- 显示当前值的输入框 -->
 			                                        <input class="trigger" style="padding:1px 8px;" type="button"/> <!-- 用于显示下拉列表的按钮 -->
 			                                        <ul>   <!-- 列表菜单 -->
@@ -1653,7 +1707,7 @@
 		    								</td>
 		    								<td>36</td>
 		    								<td>
-		    									<span class="dropdown">  <!-- 模拟 select 的标记， -->
+		    									<span class="dropdown" style="z-index:109;">  <!-- 模拟 select 的标记， -->
 			                                        <input class="editor" type="text" value="箱" onfocus="javascript:if(this.value=='箱')this.value='';"/> <!-- 显示当前值的输入框 -->
 			                                        <input class="trigger" style="padding:1px 8px;" type="button"/> <!-- 用于显示下拉列表的按钮 -->
 			                                        <ul>   <!-- 列表菜单 -->
@@ -1686,7 +1740,7 @@
 		    								</td>
 		    								<td>36</td>
 		    								<td>
-		    									<span class="dropdown">  <!-- 模拟 select 的标记， -->
+		    									<span class="dropdown" style="z-index:108;">  <!-- 模拟 select 的标记， -->
 			                                        <input class="editor" type="text" value="箱" onfocus="javascript:if(this.value=='箱')this.value='';"/> <!-- 显示当前值的输入框 -->
 			                                        <input class="trigger" style="padding:1px 8px;" type="button"/> <!-- 用于显示下拉列表的按钮 -->
 			                                        <ul>   <!-- 列表菜单 -->
@@ -1719,7 +1773,7 @@
 		    								</td>
 		    								<td>36</td>
 		    								<td>
-		    									<span class="dropdown">  <!-- 模拟 select 的标记， -->
+		    									<span class="dropdown" style="z-index:107;">  <!-- 模拟 select 的标记， -->
 			                                        <input class="editor" type="text" value="箱" onfocus="javascript:if(this.value=='箱')this.value='';"/> <!-- 显示当前值的输入框 -->
 			                                        <input class="trigger" style="padding:1px 8px;" type="button"/> <!-- 用于显示下拉列表的按钮 -->
 			                                        <ul>   <!-- 列表菜单 -->
@@ -1752,7 +1806,7 @@
 		    								</td>
 		    								<td>36</td>
 		    								<td>
-		    									<span class="dropdown">  <!-- 模拟 select 的标记， -->
+		    									<span class="dropdown" style="z-index:106;">  <!-- 模拟 select 的标记， -->
 			                                        <input class="editor" type="text" value="箱" onfocus="javascript:if(this.value=='箱')this.value='';"/> <!-- 显示当前值的输入框 -->
 			                                        <input class="trigger" style="padding:1px 8px;" type="button"/> <!-- 用于显示下拉列表的按钮 -->
 			                                        <ul>   <!-- 列表菜单 -->
@@ -1785,7 +1839,7 @@
 		    								</td>
 		    								<td>36</td>
 		    								<td>
-		    									<span class="dropdown">  <!-- 模拟 select 的标记， -->
+		    									<span class="dropdown" style="z-index:105;">  <!-- 模拟 select 的标记， -->
 			                                        <input class="editor" type="text" value="箱" onfocus="javascript:if(this.value=='箱')this.value='';"/> <!-- 显示当前值的输入框 -->
 			                                        <input class="trigger" style="padding:1px 8px;" type="button"/> <!-- 用于显示下拉列表的按钮 -->
 			                                        <ul>   <!-- 列表菜单 -->
@@ -1817,8 +1871,8 @@
 		    									<a href="#"><img src="img/writeW.png" align="center"></a>
 		    								</td>
 		    								<td>36</td>
-		    								<td>
-		    									<span class="dropdown">  <!-- 模拟 select 的标记， -->
+		    								<td> 
+		    									<span class="dropdown" style="z-index:105;">  <!-- 模拟 select 的标记， -->
 			                                        <input class="editor" type="text" value="箱" onfocus="javascript:if(this.value=='箱')this.value='';"/> <!-- 显示当前值的输入框 -->
 			                                        <input class="trigger" style="padding:1px 8px;" type="button"/> <!-- 用于显示下拉列表的按钮 -->
 			                                        <ul>   <!-- 列表菜单 -->
@@ -1857,8 +1911,11 @@
 		    		<!--新增实体工厂结束-->
 		    	</div>
 		    	<!--实体工厂结束-->
+		    	<!--工作人员开始-->
+		    	<div class="logbox"></div>
+		    	<!--工作人员结束-->
 		    	<!--纸箱部分开始-->
-		    	<div class="carton">
+		    	<div class="logbox">
 		    		<!--纸箱明细开始-->
 		    		<div class="detail">
 		    			<span class="cright">纸箱明细</span >
@@ -1973,7 +2030,7 @@
 		    	</div>
 		    	<!--纸箱部分结束-->
 		    	<!--物流配送模板开始-->
-		    	<div class="box">
+		    	<div class="logbox">
 		    		<div class="templet1">
 		    			<form>
 		    				<fieldset class="templet1one">
@@ -2208,7 +2265,7 @@
 		    							<tr>
 		    								<td>
 		    									上海，江苏，浙江，安徽，江西
-		    									<img src="img/writeW.png" align="center">
+		    									<a href="#"><img src="img/writeS.png" align="center"></a>
 		    								</td>
 		    								<td>6</td>
 		    								<td>0.5</td>
@@ -2275,6 +2332,7 @@
 		    				</div>
 		    			</form>
 		    		</div>
+		    		<!--新增配送模板结束-->
 		    	</div>
 		    	<!--物流配送模板结束-->
 		    </div>

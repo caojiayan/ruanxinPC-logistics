@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>物流配送管理-实体店铺</title>
+		<script type="text/javascript" src="js/jquery-1.7.2.min.js" ></script>
+		<script type="text/javascript" src="js/logisticsIndex.js" ></script>
+		<script type="text/javascript" src="city/drag.js" ></script>
+		<script type="text/javascript" src="city/city_arr.js" ></script>
+		<link rel="stylesheet" href="css/logisticsIndex.css" />
+		<link rel="stylesheet" href="city/alpha.css" />
+	</head>
+	<body>
+		<script type="text/javascript">
+        // 是否在数组内
+        function in_array(needle, haystack) {
+	        if(typeof needle == 'string' || typeof needle == 'number') {
+		        for(var i in haystack) {
+			        if(haystack[i] == needle) {
+					    return true;
+			        }
+		        }
+	        }
+	        return false;
+        }
+        </script>
+		<!--header开始-->
+		<div class="bj1">
+	        <div class="bj1box">
+	            <p>软信商家账号<a style="margin-left: 10px;"></a><a href="#">退出</a><a style="margin-left: 20px;"></a><a href="#">消息</a></p>
+            <ul class="bj1nav">
+                <li style="padding-right: 0;"><a href="#">卖家中心 |</a>
+                    <ul>
+      	                <li><a href="#">卖家中心</a></li>
+                        <li><a href="#">卖家中心</a></li>
+                        <li><a href="#">卖家中心</a></li>
+                        <li><a href="#">卖家中心</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">开发平台 |</a>
+                    <ul>
+      	                <li><a href="#">卖家中心</a></li>
+                        <li><a href="#">卖家中心</a></li>
+                        <li><a href="#">卖家中心</a></li>
+                        <li><a href="#">卖家中心</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">软信下载 |</a>
+                    <ul>
+      	                <li><a href="#">卖家中心</a></li>
+                        <li><a href="#">卖家中心</a></li>
+                        <li><a href="#">卖家中心</a></li>
+                        <li><a href="#">卖家中心</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">软信商城 |</a>
+                    <ul>
+      	                <li><a href="#">卖家中心</a></li>
+                        <li><a href="#">卖家中心</a></li>
+                        <li><a href="#">卖家中心</a></li>
+                        <li><a href="#">卖家中心</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">软信官网 |</a>
+      	            <ul>
+      	                <li><a href="#">卖家中心</a></li>
+                        <li><a href="#">卖家中心</a></li>
+                        <li><a href="#">卖家中心</a></li>
+                        <li><a href="#">卖家中心</a></li>
+                    </ul>
+                </li>
+            </ul>
+            </div>
+        </div>
+        <div class="bj2">
+            <p>商家经营规则更新通知</a><span>详情</span></a></p>
+        </div>
+        <div class="bj3">
+            <ul>
+                <li><a href="#">首页</a></li>
+                <li><a href="#">实体</a></li>
+                <li><a href="#">人员</a></li>
+                <li><a href="#">订单</a></li>
+                <li><a href="#">数据</a></li>
+                <li><a href="#">钱包</a></li>
+            </ul>
+        </div>
+        <!--header结束-->
+        <!--content开始-->
+        <div class="content">
+	        <div class="con1 clearfix">
+		        <div class="con1_nav">
+			        <p>展开左侧<span>物流配送管理 </span></p>
+		        </div>
+		        <div class="con1_msg">
+			        <p>软信商家发布“全新实物类商品”的有关规定和说明</p>
+		        </div>
+		    </div>
+		    <!--下拉菜单栏-->
+		    <div class="Smenubar">
+		    	<table class="clearfix list">
+		    		<tbody></tbody>
+		    		<tr class="listtr">
+		    			<td><a href="logisticsIndex.html">实体店铺</a></td>
+		    			<td><a href="warehouse.html">实体仓库</a></td>
+		    			<td><a href="factory.html">实体工厂 </a></td>
+		    			<td><a href="functionary.html">工作人员 </a></td>
+		    			<td class="list1 active" ><a href="carton.html">纸箱  </a></td>
+		    			<td class="list2"><a href="dispatching.html">物流配送模板</a></td>
+		    		</tr>
+		    	</table>
+		    </div>
+		    <!--纸箱部分开始-->
+		    	<div class="logbox">
+		    		<!--纸箱明细开始-->
+		    		<div class="detail">
+		    			<span class="cright">纸箱明细</span >
+		    			<input type="image" src="img/addGreen.png" align="center">
+		    			<img src="img/page.png" align="center">
+		    			<img src="img/trashW.png" align="center">
+		    			<table class="cartontable">
+		    				<tbody></tbody>
+		    				<tr>
+		    					<td>纸箱规格（长*宽*高）</td>
+		    					<td>规格单位</td>
+		    					<td>重量/*kg</td>
+		    					<td>体积/*m³</td>
+		    					<td>库存/个</td>
+		    					<td>内部编号</td>
+		    					<td>
+		    						<img class="dettdimg" src="img/blockS.png" align="center">
+		    					</td>
+		    				</tr>
+		    				<tr>
+		    					<td>25*35*45</td>
+		    					<td>cm/厘米</td>
+		    					<td>0.2</td>
+		    					<td>0.04</td>
+		    					<td>1200</td>
+		    					<td>A5</td>
+		    					<td>
+		    						<img src="img/writeW.png" align=" center">
+		    						<img src="img/block.png" align="center">
+		    					</td>
+		    				</tr>
+		    				<tr>
+		    					<td>25*35*45</td>
+		    					<td>cm/厘米</td>
+		    					<td>0.2</td>
+		    					<td>0.04</td>
+		    					<td>1200</td>
+		    					<td>A5</td>
+		    					<td>
+		    						<img src="img/writeW.png" align=" center">
+		    						<img src="img/block.png" align="center">
+		    					</td>
+		    				</tr>
+		    				<tr>
+		    					<td>25*35*45</td>
+		    					<td>cm/厘米</td>
+		    					<td>0.2</td>
+		    					<td>0.04</td>
+		    					<td>1200</td>
+		    					<td>A5</td>
+		    					<td>
+		    						<img src="img/writeW.png" align=" center">
+		    						<img src="img/block.png" align="center">
+		    					</td>
+		    				</tr>
+		    				<tr>
+		    					<td>25*35*45</td>
+		    					<td>cm/厘米</td>
+		    					<td>0.2</td>
+		    					<td>0.04</td>
+		    					<td>1200</td>
+		    					<td>A5</td>
+		    					<td>
+		    						<img src="img/writeW.png" align=" center">
+		    						<img src="img/block.png" align="center">
+		    					</td>
+		    				</tr>
+		    				<tr>
+		    					<td>25*35*45</td>
+		    					<td>cm/厘米</td>
+		    					<td>0.2</td>
+		    					<td>0.04</td>
+		    					<td>1200</td>
+		    					<td>A5</td>
+		    					<td>
+		    						<img src="img/writeW.png" align=" center">
+		    						<img src="img/block.png" align="center">
+		    					</td>
+		    				</tr>
+		    				<tr>
+		    					<td>25*35*45</td>
+		    					<td>cm/厘米</td>
+		    					<td>0.2</td>
+		    					<td>0.04</td>
+		    					<td>1200</td>
+		    					<td>A5</td>
+		    					<td>
+		    						<img src="img/writeW.png" align=" center">
+		    						<img src="img/block.png" align="center">
+		    					</td>
+		    				</tr>
+		    				<tr>
+		    					<td>25*35*45</td>
+		    					<td>cm/厘米</td>
+		    					<td>0.2</td>
+		    					<td>0.04</td>
+		    					<td>1200</td>
+		    					<td>A5</td>
+		    					<td>
+		    						<img src="img/writeW.png" align=" center">
+		    						<img src="img/block.png" align="center">
+		    					</td>
+		    				</tr>
+		    			</table>
+		    		</div>
+		    		<!--纸箱明细结束-->
+		    		<!--更多操作-->
+		    		<div class="cartonOperate">
+		    			<span class="cright">更多操作</span>
+		    			<button class="CartonblueBtn" type='submit'>采购纸箱</button>
+		    		</div>
+		    	</div>
+		   <!--纸箱部分结束-->
+		   <!--content结束-->
+		   </div>
+		<!--footer开始-->
+		<div class="bj4 clearfix">
+            <p style="color:#999;">粤ICP路1507617号&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@2016&nbsp;&nbsp;软信&nbsp;&nbsp;版权所有&nbsp; <span><a href="#">申请入驻</a>&nbsp;&nbsp;<a href="#">申请合作</a>&nbsp;&nbsp;<a href="#">开发平台</a>&nbsp;&nbsp;<a href="#">关于软信</a></span></p>
+        </div>
+        <!--footer结束-->
+	</body>
+</html>
