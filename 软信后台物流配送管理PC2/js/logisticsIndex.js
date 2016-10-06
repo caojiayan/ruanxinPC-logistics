@@ -60,15 +60,6 @@ $(document).ready(function(){
 });
 
 
-//
-//$(function(){
-//			$('.listtr td').on('click',function(){
-//				$('.listtr td').removeClass('active');
-//				$(this).addClass('active');
-//				$('.logisticsBox .logbox').removeClass('active');
-//				$('.logisticsBox .logbox').eq($(this).index()).addClass('active');
-//			})
-//		})
 $(function(){
 			$('.listtr td').on('click',function(){
 				$(this).addClass('active');//为被点击的选项卡添加“active”类
@@ -77,9 +68,29 @@ $(function(){
 				$now.addClass('active');//为这个内容容器添加“active”类
 				$now.siblings().removeClass('active')//去掉其它内容容器的“active”类
 			});
-		});
-//$(function(){
-//	$('.listtr td').click(function(){
-//		$(this).CSS("background-color""#EEE")
-//	});
-//});
+	});
+	
+//新增”物流配送模板“按钮
+$(function(){
+	$(".dispaclick").click(function(){
+		$(".templet3").toggle();
+	});
+});
+//实体工厂
+$(function(){
+	$(".facBoxclick").click(function(){
+		$(".factoryBox").toggle();
+	});
+});
+//实体店铺
+$(function(){
+	$(".logistclick").click(function(){
+		$(".NewlogisticsBox").toggle();
+	});
+});
+//实体仓库
+$(function(){
+	$(".Newwareclick").click(function(){
+		$(".NewwarehouseBox").toggle();
+	});
+});

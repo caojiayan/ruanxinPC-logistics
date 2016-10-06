@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<title>物流配送管理-实体店铺</title>
+		<title>物流配送管理-实体工厂</title>
 		<script type="text/javascript" src="js/jquery-1.7.2.min.js" ></script>
 		<script type="text/javascript" src="js/logisticsIndex.js" ></script>
 		<script type="text/javascript" src="city/drag.js" ></script>
@@ -143,7 +143,7 @@
 		    		<!--工厂明细开始-->
 		    		<div class="detail">
 		    			<span class="cright">工厂明细</span >
-		    			<input type="image" src="img/addGreen.png" align="center">
+		    			<input type="image" class="facBoxclick" src="img/addGreen.png" align="center">
 		    			<img src="img/page.png" align="center">
 		    			<img src="img/trashW.png" align="center">
 		    			<table class="detailtable">
@@ -156,7 +156,7 @@
 		    					<td>漏发数</td>
 		    					<td>退货订单</td>
 		    					<td>
-		    						<img src="img/1122.png" align="center">
+		    						<img src="img/newselect.png" align="center">
 		    					</td>
 		    				</tr>
 		    				<tr>
@@ -168,7 +168,7 @@
 		    					<td>5</td>
 		    					<td>
 		    						<img src="img/writeW.png" align=" center">
-		    						<img src="img/block.png" align="center">
+		    						<img src="img/newselect.png" align="center">
 		    					</td>
 		    				</tr>
 		    				<tr>
@@ -180,7 +180,7 @@
 		    					<td>5</td>
 		    					<td>
 		    						<img src="img/writeW.png" align=" center">
-		    						<img src="img/block.png" align="center">
+		    						<img src="img/newselect.png" align="center">
 		    					</td>
 		    				</tr>
 		    				<tr>
@@ -192,7 +192,7 @@
 		    					<td>5</td>
 		    					<td>
 		    						<img src="img/writeW.png" align=" center">
-		    						<img src="img/block.png" align="center">
+		    						<img src="img/newselect.png" align="center">
 		    					</td>
 		    				</tr>
 		    				<tr>
@@ -204,7 +204,7 @@
 		    					<td>5</td>
 		    					<td>
 		    						<img src="img/writeW.png" align=" center">
-		    						<img src="img/block.png" align="center">
+		    						<img src="img/newselect.png" align="center">
 		    					</td>
 		    				</tr>
 		    				<tr>
@@ -216,7 +216,7 @@
 		    					<td>5</td>
 		    					<td>
 		    						<img src="img/writeW.png" align=" center">
-		    						<img src="img/block.png" align="center">
+		    						<img src="img/newselect.png" align="center">
 		    					</td>
 		    				</tr>
 		    				<tr>
@@ -228,7 +228,7 @@
 		    					<td>5</td>
 		    					<td>
 		    						<img src="img/writeW.png" align=" center">
-		    						<img src="img/block.png" align="center">
+		    						<img src="img/newselect.png" align="center">
 		    					</td>
 		    				</tr>
 		    				<tr>
@@ -240,14 +240,14 @@
 		    					<td>5</td>
 		    					<td>
 		    						<img src="img/writeW.png" align=" center">
-		    						<img src="img/block.png" align="center">
+		    						<img src="img/newselect.png" align="center">
 		    					</td>
 		    				</tr>
 		    			</table>
 		    		</div>
 		    		<!--工厂明细结束-->
 		    		<!--新增实体工厂开始-->
-		    		<div class="newlyShop clearfix">
+		    		<div class="newlyShop factoryBox clearfix">
 		    			<p class="letterRed">新增实体工厂</p>
 		    			<!--nShop1-->
 		    			<div class="nShop1">
@@ -305,8 +305,9 @@
 		    			<div class="nShop2">
 		    				<form>
 		    					<fieldset class="nShop2one">
-		    						<span class="cright">提供发票</span>
-		    						<input type="checkbox" >是
+		    						<span class="cright">提供发货</span>
+		    						<input type="checkbox" >
+		    						<span class="cright">是</span>
 		    						<!--发货范围（城市地区选择）开始-->
 		    						<span class="cright">发货范围</span>
 		    						<script type="text/javascript" src="city/city_func.js"></script>
@@ -709,7 +710,7 @@
 		    			<!--nShop4结束-->
 		    			<div class="shopSubmit">
 		    				<button class="blueBtn" type='submit'>确定</button>
-		    			    <button class="blueBtn" type='submit'>取消</button>
+		    			    <button class="blueBtn facBoxclick" type='submit'>取消</button>
 		    			</div>
 		    		</div >
 		    		<!--新增实体工厂结束-->

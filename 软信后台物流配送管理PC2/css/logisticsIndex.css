@@ -104,6 +104,17 @@ button{
     border-left-width: 0px;
     z-index: 99;
 }
+/*去掉点击框时自带的颜色*/
+input:focus,
+button:focus{
+	outline: none ;
+}
+/*鼠标变成“手型”*/
+button{
+	cursor:pointer;
+}
+
+
 .dropdown .editor {
 	display:block;
 	border:0;
@@ -430,7 +441,7 @@ body{
 	padding: 5px 0;
 }
 .detailtable tr:first-child img{
-	padding-right: 8px;
+	padding-right: 41px;
 }
 .detailtable tr td img{
 	padding: 0 5px;
@@ -447,6 +458,7 @@ body{
 	margin: 10px;
 	padding: 10px 0;
 	border-radius: 10px;
+	display: none;
 }
 /*nShop1*/
 .newlyShop p,
@@ -553,6 +565,7 @@ body{
 	background: #009843;
 	color: #FFF;
 }
+/*物流配送模板部分*/
 .templet1{
 	padding: 10px 25px;
 }
@@ -569,13 +582,20 @@ body{
 .templet1two p:first-child{
 	padding-left:0;
 }
+.templet3{
+	background: #EEEEEE;
+	margin: 10px;
+	padding: 10px 0;
+	border-radius: 10px;
+	display: none;
+}
 .templet3 p{
-	padding-left: 25px;
+	padding:5px 0 10px 25px;
 }
 .templet3Box{
-	background: #EEEEEE;
-	margin:10px;
-	border-radius: 10px;
+	background: #FFFFFF;
+	margin:5px 15px 15px 15px;
+	padding: 5px;
 }
 .tem3oneTable{
 	width: 1030px;

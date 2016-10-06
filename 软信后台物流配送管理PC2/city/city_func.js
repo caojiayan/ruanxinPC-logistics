@@ -151,7 +151,7 @@ var jobArea = {
 		var output='<div id="sub_jobArea">',width,select_ed,key;
 		select_ed=in_array(id,jobArea_Arr)?' chkON':'';
 		var arr=getAreaIDs(id);
-			width=Math.ceil(Math.sqrt(arr.length-1))*60;
+			width=Math.ceil(Math.sqrt(arr.length-1))*54;
 		output+='<ul style="width:'+width+'px"><h4 onclick="jobArea.Chk(\''+id+'\')">';
 		output+='<a href="javascript:" class="jobArea' + id + select_ed +'">'+ja[id]+'</a></h4>';
 

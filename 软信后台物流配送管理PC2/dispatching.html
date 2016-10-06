@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<title>物流配送管理-实体店铺</title>
+		<title>物流配送管理-物流配送模板</title>
 		<script type="text/javascript" src="js/jquery-1.7.2.min.js" ></script>
 		<script type="text/javascript" src="js/logisticsIndex.js" ></script>
 		<script type="text/javascript" src="city/drag.js" ></script>
@@ -131,7 +131,7 @@
 		    		<!--现有配送模板开始-->
 		    		<div class="detail">
 		    			<span class="cright">现有配送模板</span >
-		    			<input type="image" src="img/addGreen.png" align="center">
+		    			<input type="image" class="dispaclick" src="img/addGreen.png" align="center">
 		    			<img src="img/page.png" align="center">
 		    			<img src="img/trashW.png" align="center">
 		    			<table class="detailtable">
@@ -143,7 +143,7 @@
 		    					<td>包邮条件</td>
 		    					<td>提交人</td>
 		    					<td>
-		    						<img class="dettdimg" src="img/blockS.png" align="center">
+		    						<img class="dettdimg" src="img/newselect.png" align="center">
 		    					</td>
 		    				</tr>
 		    				<tr>
@@ -154,7 +154,7 @@
 		    					<td>张三</td>
 		    					<td>
 		    						<img src="img/writeW.png" align=" center">
-		    						<img src="img/block.png" align="center">
+		    						<img src="img/newselect.png" align="center">
 		    					</td>
 		    				</tr>
 		    				<tr>
@@ -165,7 +165,7 @@
 		    					<td>张三</td>
 		    					<td>
 		    						<img src="img/writeW.png" align=" center">
-		    						<img src="img/block.png" align="center">
+		    						<img src="img/newselect.png"align="center">
 		    					</td>
 		    				</tr>
 		    				<tr>
@@ -176,7 +176,7 @@
 		    					<td>张三</td>
 		    					<td>
 		    						<img src="img/writeW.png" align=" center">
-		    						<img src="img/block.png" align="center">
+		    						<img src="img/newselect.png" align="center">
 		    					</td>
 		    				</tr>
 		    				<tr>
@@ -187,7 +187,7 @@
 		    					<td>张三</td>
 		    					<td>
 		    						<img src="img/writeW.png" align=" center">
-		    						<img src="img/block.png" align="center">
+		    						<img src="img/newselect.png" align="center">
 		    					</td>
 		    				</tr>
 		    				<tr>
@@ -198,7 +198,7 @@
 		    					<td>张三</td>
 		    					<td>
 		    						<img src="img/writeW.png" align=" center">
-		    						<img src="img/block.png" align="center">
+		    						<img src="img/newselect.png" align="center">
 		    					</td>
 		    				</tr>
 		    				<tr>
@@ -209,7 +209,7 @@
 		    					<td>张三</td>
 		    					<td>
 		    						<img src="img/writeW.png" align=" center">
-		    						<img src="img/block.png" align="center">
+		    						<img src="img/newselect.png" align="center">
 		    					</td>
 		    				</tr>
 		    				<tr>
@@ -220,7 +220,7 @@
 		    					<td>张三</td>
 		    					<td>
 		    						<img src="img/writeW.png" align=" center">
-		    						<img src="img/block.png" align="center">
+		    						<img src="img/newselect.png" align="center">
 		    					</td>
 		    				</tr>
 		    			</table>
@@ -228,7 +228,7 @@
 		    		<!--新增配送模板-->
 		    		<div class="templet3">
 		    			<form>
-		    				<p>新增配送模板</p>
+		    				<p class="letterRed">新增配送模板</p>
 		    				<div class="templet3Box">
 		    					<fieldset class="templet3one">
 		    						<table class="tem3oneTable">
@@ -344,11 +344,11 @@
 		    								<td>129</td>
 		    							</tr>
 		    							<tr>
-		    								<td>
-		    									<input type="text" class="jobAreaText" value="上海,江苏,浙江,安徽,江西" style="background: #EEEEEE; border-bottom: 0px;">
+		    								<td style="text-align:left;">
+		    									<input type="text" class="jobAreaText" value="上海,江苏,浙江,安徽" style="border-bottom: 0px;width: 330px; text-align: right;">
 		    									<!--发货范围（城市地区选择）开始-->
 		    						<script type="text/javascript" src="city/city_func.js"></script>
-	                                <input id="btn_jobArea" type="button" value="" onclick="jobAreaSelect()" style="border-radius: 5px;width:30px;height:25px;margin: 0 auto; background: url(img/writeS.png) no-repeat center bottom;"/> 
+	                                <input id="btn_jobArea" type="button" value="" onclick="jobAreaSelect()" style="border-radius: 5px;width:30px;height:25px;margin: 0 auto; background: url(img/writeW.png) no-repeat center bottom;"/> 
 	                                <input id="jobAreaID" type="hidden" name="jobAreaID" value="" />
 		    						<script type="text/javascript" src="city/certificate_arr.js"></script>
 	                                <script type="text/javascript" src="city/certificate_func.js"></script>
@@ -425,7 +425,7 @@
 		    					</fieldset>
 		    					<div class="shopSubmit">
 		    				        <button class="blueBtn" type='submit'>确定</button>
-		    			            <button class="blueBtn" type='submit'>取消</button>
+		    			            <button class="blueBtn dispaclick" type='submit'>取消</button>
 		    			        </div>
 		    				</div>
 		    			</form>
