@@ -76,21 +76,130 @@ $(function(){
 		$(".templet3").toggle();
 	});
 });
+//现有配送模板明细修改
+$(function(){
+	$(".dispamodify").click(function(){
+		$(".templet3").show();
+	});
+});
+
 //实体工厂
 $(function(){
 	$(".facBoxclick").click(function(){
 		$(".factoryBox").toggle();
 	});
 });
-//实体店铺
+//实体工厂中工厂明细修改
 $(function(){
-	$(".logistclick").click(function(){
-		$(".NewlogisticsBox").toggle();
+	$(".facBoxmodify").click(function(){
+		$(".factoryBox").show();
 	});
 });
+
+
 //实体仓库
 $(function(){
 	$(".Newwareclick").click(function(){
 		$(".NewwarehouseBox").toggle();
 	});
 });
+//实体仓库中仓库明细修改
+$(function(){
+	$(".Newwaremodify").click(function(){
+		$(".NewwarehouseBox").show();
+	});
+});
+
+
+//实体店铺部分
+//实体店铺
+$(function(){
+	$(".logistclick").click(function(){
+		$(".NewlogisticsBox").toggle();
+	});
+});
+//实体店铺中店铺明细修改
+$(function(){
+	$(".logistmodify").click(function(){
+		$(".NewlogisticsBox").show();
+	});
+});
+
+
+//店铺商品在实体店铺库存情况中上传图片
+function fileSelect() {
+        document.getElementById("fileToUpload").click();
+   }
+    function fileSelected() {
+      // 文件选择后触发次函数
+    }
+//店铺商品在实体店铺库存情况中修改盒子
+//遮盖层
+$(function(){
+	$(".nS4Goodsdel").click(function(){
+		var bh = $("body").height();
+        var bw = $("body").width();
+        $(".maskingLayer").css({
+            height:bh,
+            width:bw,
+            display:"block"
+        });
+		$("#nShop4modifyMod").show();
+		$("#nShop4modifyNew").hide();
+		$(".maskingLayer").show();
+	});
+});
+//点击盒子左上角的删除键进行关闭盒子
+$(function(){
+	$(".nS4modModdel").click(function(){
+		$("#nShop4modifyMod").hide();
+		$(".maskingLayer").hide();
+	});
+});
+//点击盒子左上角的保存键进行关闭盒子
+$(function(){
+	$(".nS4modModpres").click(function(){
+		$("#nShop4modifyMod").hide();
+		$(".maskingLayer").hide();
+	});
+});
+
+
+//店铺商品在实体店铺库存情况中新增盒子
+//遮盖层
+$(function(){
+	$(".nS4GoodsPreserve").click(function(){
+		var bh = $("body").height();
+        var bw = $("body").width();
+        $(".maskingLayer").css({
+            height:bh,
+            width:bw,
+            display:"block"
+        });
+		$("#nShop4modifyNew").show();
+		$("#nShop4modifyMod").hide();
+		$(".maskingLayer").show();
+	});
+});
+//点击盒子左上角的删除键进行关闭盒子
+$(function(){
+	$(".nS4modNewdel").click(function(){
+		$("#nShop4modifyNew").hide();
+		$(".maskingLayer").hide();
+	});
+});
+//点击盒子左上角的保存键进行关闭盒子
+$(function(){
+	$(".nS4modNewpres").click(function(){
+		$("#nShop4modifyNew").hide();
+		$(".maskingLayer").hide();
+	});
+});
+//点击库存换算按钮，输入框获得焦点
+//$(function(){
+//  $(".nS4modWrite").click(function(){
+//		$(".nS4modWriteNum").get(0).focus();
+//		$(".nShop4two").show();
+//	});
+//})
+

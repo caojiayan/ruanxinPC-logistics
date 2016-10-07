@@ -206,6 +206,10 @@ input[type="image"]{
 .numberWidth{
 	width: 40px;
 }
+/*点击上传图片*/
+#fileToUpload{
+	display: none ;
+}
 body{
 	margin: 0 auto;
 	font-family:"microsoft yahei" ,sans-serif;
@@ -603,4 +607,68 @@ body{
 }
 .tem3oneTable tr td{
 	padding: 5px 0;
+}
+/*修改新增店铺商品在实体店铺库存情况部分*/
+.nShop4{
+   position:relative ;
+}
+
+.nShop4modify{
+	width: 1030px;
+	margin:5px 0 15px 0;
+	background: #FFFFFF;
+	padding-bottom: 10px;
+	border-radius: 10px;
+	box-shadow:3px 3px 40px #EEEEEE;
+	display: none;
+}
+.nShop4modifyTop{
+	background: #EEEEEE;
+	height: 30px;
+	line-height: 30px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+.nShop4modifyTop ul li{
+	display: inline-block;
+	padding: 0 10px;
+}
+.nShop4modifyTop ul li:last-child{
+	float: right;
+}
+.nShop4modifyTop ul li:nth-of-type(2){
+	padding-left: 35%;
+}
+
+.nShop4modifyMain table tr td{
+	padding: 10px 42px;
+}
+#nShop4modifyMod{
+	position:absolute;
+	z-index: 10000;
+    top:-310px;
+    left: 0;
+}
+#nShop4modifyNew{
+	position:absolute;
+	z-index: 10000;
+    top:-350px;
+    left: 0;
+}
+.nShop4two{
+	display: none;
+}
+
+/*遮盖层*/
+.maskingLayer{
+	display:none;  
+    width:100%;  
+    height:100%;  
+    background:#000;  
+    position:absolute;  
+    top:0;  
+    left:0;  
+    z-index:9999;  
+    opacity:0.5;                        /*背景的透明度:(Firefox适用；）*/  
+    filter:alpha(opacity =50);          /*背景的透明度:(IE适用)；  
 }
