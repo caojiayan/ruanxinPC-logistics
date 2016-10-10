@@ -84,6 +84,7 @@ $(function(){
 });
 
 //实体工厂
+//取消与确定按钮
 $(function(){
 	$(".facBoxclick").click(function(){
 		$(".factoryBox").toggle();
@@ -98,6 +99,7 @@ $(function(){
 
 
 //实体仓库
+//取消与确定按钮
 $(function(){
 	$(".Newwareclick").click(function(){
 		$(".NewwarehouseBox").toggle();
@@ -113,6 +115,7 @@ $(function(){
 
 //实体店铺部分
 //实体店铺
+//取消与确定按钮
 $(function(){
 	$(".logistclick").click(function(){
 		$(".NewlogisticsBox").toggle();
@@ -203,3 +206,7 @@ $(function(){
 //	});
 //})
 
+//全选按钮后面追加文字
+$(function(){
+	$(".LogcheckAll").append("text","全选")
+});

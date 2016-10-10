@@ -91,6 +91,17 @@ button{
 	border: #a0a0a0;
 	color:#FFFFFF;
 }
+/*去掉点击框时自带的颜色*/
+input:focus,
+button:focus{
+	outline: none ;
+}
+/*鼠标变成“手型”*/
+button{
+	cursor:pointer;
+}
+
+
 /*下拉框样式*/
 .dropdown {
 	display:inline-block;
@@ -104,23 +115,12 @@ button{
     border-left-width: 0px;
     z-index: 99;
 }
-/*去掉点击框时自带的颜色*/
-input:focus,
-button:focus{
-	outline: none ;
-}
-/*鼠标变成“手型”*/
-button{
-	cursor:pointer;
-}
-
 
 .dropdown .editor {
 	display:block;
 	border:0;
 	padding:0;
 	width:100%;
-	/*box-shadow: inset 1px 2px 3px #ddd;*/
 	height:inherit;
 }
 .dropdown .trigger {
@@ -432,6 +432,7 @@ body{
 .detail img{
 	float: right;
 }
+
 .detailtable{
 	width: 1030px;
 	border-radius: 10px;
@@ -444,17 +445,19 @@ body{
 .detailtable tr td{
 	padding: 5px 0;
 }
-.detailtable tr:first-child img{
-	padding-right: 41px;
-}
-.detailtable tr td img{
-	padding: 0 5px;
-}
-.dettdimg{
-	margin-right: 36px;
-}
+
 .detailtable tr:first-child{
 	background: #EEEEEE;
+}
+/*input设置大小*/
+.detailtable input{
+	width: 20px;
+	height: 20px;
+	vertical-align: middle;
+}
+.detailtable tr td:last-child{
+	text-align: right;
+	padding-right: 10px;
 }
 /*新增实体店铺*/
 .newlyShop{
@@ -555,11 +558,19 @@ body{
 	padding: 5px 0;
 	border: 1px solid #7D7D7D;
 }
-.cartontable tr td img{
-	padding: 0 5px;
-}
+
 .cartontable tr:first-child{
 	background: #EEEEEE;
+}
+/*input设置大小*/
+.cartontable input{
+	width: 20px;
+	height: 20px;
+	vertical-align: middle;
+}
+.cartontable tr td:last-child{
+	text-align: right;
+	padding-right: 10px;
 }
 .cartonOperate{
 	padding: 0 25px;
@@ -619,7 +630,7 @@ body{
 	background: #FFFFFF;
 	padding-bottom: 10px;
 	border-radius: 10px;
-	box-shadow:3px 3px 40px #EEEEEE;
+	/*box-shadow:3px 3px 40px #EEEEEE;*/
 	display: none;
 }
 .nShop4modifyTop{
