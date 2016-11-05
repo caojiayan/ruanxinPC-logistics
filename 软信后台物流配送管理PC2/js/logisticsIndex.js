@@ -53,22 +53,38 @@
 			});
 			
 //dropdown
-$(document).ready(function(){
+$(function(){
 	$(".nS4threeTable>tr>td").hover(function(){
 		$(".nS4threeTable>tr>td>.dropdown").CSS("background-color","#EEE")
 	});
 });
-
-
+//选项卡
 $(function(){
-			$('.listtr td').on('click',function(){
-				$(this).addClass('active');//为被点击的选项卡添加“active”类
-				$(this).siblings().removeClass('active');//去掉其它选项卡的"active”类
-				var $now=$('.logisticsBox .logbox').eq($('.listtr td').index(this));//获取到和被点击选项卡顺序相同的内容容器
-				$now.addClass('active');//为这个内容容器添加“active”类
-				$now.siblings().removeClass('active')//去掉其它内容容器的“active”类
-			});
+	$("#shop").click(function(){
+		location.href="shop.html";
+		$(this).css("background","#EEE")
 	});
+	$("#warehouse").click(function(){
+		location.href="warehouse.html";
+		$(this).css("background","#EEE")
+	});
+	$("#factory").click(function(){
+		location.href="factory.html";
+		$(this).css("background","#EEE")
+	});
+	$("#functionary").click(function(){
+		location.href="functionary.html";
+		$(this).css("background","#EEE")
+	});
+	$("#carton").click(function(){
+		location.href="carton.html";
+		$(this).css("background","#EEE")
+	});
+	$("#dispatching").click(function(){
+		location.href='dispatching.html';
+		$(this).css("background","#EEE")
+	});
+});
 	
 //新增”物流配送模板“按钮
 $(function(){
@@ -76,9 +92,31 @@ $(function(){
 		$(".templet3").toggle();
 	});
 });
-//现有配送模板明细修改
+//现有配送模板明细新增
 $(function(){
 	$(".dispamodify").click(function(){
+		$(".templet3").show();
+	});
+	//现有配送模板明细修改
+	$("#dispatchingW1").click(function(){
+		$(".templet3").show();
+	});
+	$("#dispatchingW2").click(function(){
+		$(".templet3").show();
+	});
+	$("#dispatchingW3").click(function(){
+		$(".templet3").show();
+	});
+	$("#dispatchingW4").click(function(){
+		$(".templet3").show();
+	});
+	$("#dispatchingW5").click(function(){
+		$(".templet3").show();
+	});
+	$("#dispatchingW6").click(function(){
+		$(".templet3").show();
+	});
+	$("#dispatchingW7").click(function(){
 		$(".templet3").show();
 	});
 });
@@ -90,11 +128,34 @@ $(function(){
 		$(".factoryBox").toggle();
 	});
 });
-//实体工厂中工厂明细修改
+//实体工厂中工厂明细新增
 $(function(){
 	$(".facBoxmodify").click(function(){
 		$(".factoryBox").show();
 	});
+	//实体工厂中工厂明细修改
+	$("#factoryW1").click(function(){
+		$(".factoryBox").show();
+	});
+	$("#factoryW2").click(function(){
+		$(".factoryBox").show();
+	});
+	$("#factoryW3").click(function(){
+		$(".factoryBox").show();
+	});
+	$("#factoryW4").click(function(){
+		$(".factoryBox").show();
+	});
+	$("#factoryW5").click(function(){
+		$(".factoryBox").show();
+	});
+	$("#factory6").click(function(){
+		$(".factoryBox").show();
+	});
+	$("#factoryW7").click(function(){
+		$(".factoryBox").show();
+	});
+	
 });
 
 
@@ -105,9 +166,31 @@ $(function(){
 		$(".NewwarehouseBox").toggle();
 	});
 });
-//实体仓库中仓库明细修改
+//实体仓库中仓库新增
 $(function(){
 	$(".Newwaremodify").click(function(){
+		$(".NewwarehouseBox").show();
+	});
+	//实体仓库中仓库明细修改
+	$("#wareW1").click(function(){
+		$(".NewwarehouseBox").show();
+	});
+	$("#wareW2").click(function(){
+		$(".NewwarehouseBox").show();
+	});
+	$("#wareW3").click(function(){
+		$(".NewwarehouseBox").show();
+	});
+	$("#wareW4").click(function(){
+		$(".NewwarehouseBox").show();
+	});
+	$("#wareW5").click(function(){
+		$(".NewwarehouseBox").show();
+	});
+	$("#wareW6").click(function(){
+		$(".NewwarehouseBox").show();
+	});
+	$("#wareW7").click(function(){
 		$(".NewwarehouseBox").show();
 	});
 });
@@ -121,9 +204,31 @@ $(function(){
 		$(".NewlogisticsBox").toggle();
 	});
 });
-//实体店铺中店铺明细修改
+//实体店铺中店铺新增
 $(function(){
 	$(".logistmodify").click(function(){
+		$(".NewlogisticsBox").show();
+	});
+	//实体店铺中店铺明细修改
+	$("#shopW1").click(function(){
+		$(".NewlogisticsBox").show();
+	});
+	$("#shopW2").click(function(){
+		$(".NewlogisticsBox").show();
+	});
+	$("#shopW3").click(function(){
+		$(".NewlogisticsBox").show();
+	});
+	$("#shopW4").click(function(){
+		$(".NewlogisticsBox").show();
+	});
+	$("#shopW5").click(function(){
+		$(".NewlogisticsBox").show();
+	});
+	$("#shopW6").click(function(){
+		$(".NewlogisticsBox").show();
+	});
+	$("#shopW7").click(function(){
 		$(".NewlogisticsBox").show();
 	});
 });
@@ -167,7 +272,6 @@ $(function(){
 	});
 });
 
-
 //店铺商品在实体店铺库存情况中新增盒子
 //遮盖层
 $(function(){
@@ -198,15 +302,58 @@ $(function(){
 		$(".maskingLayer").hide();
 	});
 });
-//点击库存换算按钮，输入框获得焦点
-//$(function(){
-//  $(".nS4modWrite").click(function(){
-//		$(".nS4modWriteNum").get(0).focus();
-//		$(".nShop4two").show();
-//	});
-//})
-
 //全选按钮后面追加文字
 $(function(){
 	$(".LogcheckAll").append("text","全选")
+});
+
+//各明细input全选或取消全选
+(function($){
+    $.fn.checkall = function(options){
+        var defaults = {chname:"checkname[]", callback:function(){}},
+        options = $.extend(defaults, options),
+        $obj = $(this),
+        $items = $("input[name='"+options.chname+"']"),
+        checkedItem = 0;
+        $items.click(function(){
+            if($items.filter(":checked").length === $items.length){
+                $obj.attr("checked",true);
+            }else{
+                $obj.removeAttr("checked");
+            }
+            checkedItem = $items.filter(":checked").length;
+            if(typeof options.callback === 'function') options.callback(checkedItem);
+        });
+        return $obj.each(function(){
+            $(this).click(function(){
+                if($(this).attr('checked')){
+                    $items.attr("checked",true);
+                }else{
+                    $items.removeAttr("checked");
+                }
+                checkedItem = $items.filter(":checked").length;
+                if(typeof options.callback === 'function') options.callback(checkedItem);
+            });
+        });
+    }
+})(jQuery);
+//回调
+$(function(){
+    $("#checkall").checkall({chname:"logistics", callback: function(e){}});
+});
+//删除
+$(function(){
+	$("#delBtn").click(function () {
+        $(".detailtable").find("input[name='logistics']").each(function () {
+            if($(this).prop("checked")) {
+               $(this).parent().parent().remove();
+            }
+        });
+        //纸箱明细
+        $(".cartontable").find("input[name='logistics']").each(function () {
+            if($(this).prop("checked")) {
+               $(this).parent().parent().remove();
+            }
+        });
+    });
 });
